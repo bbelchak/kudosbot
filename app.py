@@ -44,7 +44,7 @@ def give_kudos():
             "fields": [
                 {
                     "title": "Kudos!",
-                    "value": message,
+                    "value": "%s\n\nSend your own kudos with /kudos!" % message,
                     "short": False
                 }
             ]
