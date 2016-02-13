@@ -21,12 +21,12 @@ def home():
 @app.route('/give-kudos', methods=['POST'])
 def give_kudos():
     token = request.form['token']
-    if token != app.config.SLACK_SLASH_TOKEN:
+    if token != app.config['SLACK_SLASH_TOKEN']:
         return render_template('404.html'), 400
     kudos_user = re.search('(?@\w+) ')
     if not kudos_user:
         return "I'm sorry, I didn't hear a name in there. Try again?"
-    response = 'Thanks, I\'ve given kudos to %s' % kudos_user
+    response = "Thanks, I've given kudos to %s" % kudos_user
     return response
 
 
